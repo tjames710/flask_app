@@ -1,10 +1,12 @@
 from flask import Flask 
+from flask import request
 
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-	return "Hello there it's my first flask app!"
+def index(name='Ted'):
+	name = request.args.get('name', name)
+	return "Hello it's {}!".format(name)
 
 
-app.run(debug=True) #teamtreehouse uses port 8000 and host is 0.0.0.0
+app.run(debug=True) 
