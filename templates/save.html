@@ -6,7 +6,7 @@
 <h1> Hello {{ name }}!</h1>
 <!-- <a href="/index"><button>Go Back</button></a> -->
 <form action="{{ url_for('index') }}" method="GET">
-	<button action="{{ url_for('index') }}" value="back">Back</button>
+	<button name="back" value="back_home">Back</button>
 </form>
 
 {% endblock %}
