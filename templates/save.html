@@ -4,5 +4,9 @@
 
 {% block content %}
 <h1> Hello {{ name }}!</h1>
-<button name="back_button">Go Back</button>
+<!-- <a href="/index"><button>Go Back</button></a> -->
+<form action="{{ url_for('index') }}" method="GET">
+	<button action="{{ url_for('index') }}" value="back">Back</button>
+</form>
+
 {% endblock %}
