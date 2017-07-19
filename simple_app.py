@@ -20,8 +20,8 @@ def add(num1, num2):
 @app.route('/save', methods=['POST'])
 def save():
 	name = request.form['name']
-	if name:
-		return render_template("save.html", name=name)
+	return render_template("save.html", name=name)
+	
 	
 
 
