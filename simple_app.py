@@ -9,14 +9,11 @@ app = Flask(__name__)
 def index():
 	return render_template("index.html")
 
-@app.route('/index', methods=['GET'])
-def back():
-	return redirect(url_for('index'))
-
 @app.route('/save', methods=['POST'])
 def save():
-	name = request.form['name']
-	return render_template("save.html", name=name)
+	response = make_response(redirect(url_for('index')))
+	response.set_cookie('character', json.dumps(dict(request.form.items())))
+	return response
 	
 	
 
